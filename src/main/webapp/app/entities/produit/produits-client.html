@@ -18,7 +18,7 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
+<!--                     <th><span data-translate="global.field.id">ID</span></th> -->
                     <th><span data-translate="boncmd8App.produit.referenceProduit">Reference Produit</span></th>
                     <th><span data-translate="boncmd8App.produit.designation">Designation</span></th>
                     <th><span data-translate="boncmd8App.produit.categorie">Categorie</span></th>
@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="produit in vm.produits track by produit.id">
-                    <td><a ui-sref="produit-client-detail({id:produit.id})">{{produit.id}}</a></td>
+<!--                     <td><a ui-sref="produit-client-detail({id:produit.id})">{{produit.id}}</a></td> -->
                     <td>{{produit.referenceProduit}}</td>
                     <td>{{produit.designation}}</td>
                     <td>

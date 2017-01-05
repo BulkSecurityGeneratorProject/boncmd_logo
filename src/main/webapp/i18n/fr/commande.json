@@ -3,15 +3,15 @@
         "commande" : {
             "home": {
                 "title": "Commandes",
-                "createLabel": "Créer un nouveau Commande",
-                "createOrEditLabel": "Créer ou éditer un Commande",
+                "createLabel": "Créer  une nouvelle Commande",
+                "createOrEditLabel": "Créer ou éditer une nouvelle",
                 "search": "Recherche pour Commande"
             },
-            "created": "Un nouveau Commande a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Commande avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Commande avec l'identifiant {{ param }} a été supprimé",
+            "created": "une nouvelle Commande a été créée avec l'identifiant {{ param }}",
+            "updated": "La Commande avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "La Commande avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Commande {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer la Commande {{ id }} ?"
             },
             "detail": {
                 "title": "Commande"
