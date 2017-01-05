@@ -1,0 +1,58 @@
+<div>
+    <h2 data-translate="boncmd8App.categorie.home.title">Categories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="categorie-client.new" has-authority="ROLE_ADMIN">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="boncmd8App.categorie.home.createLabel">
+                        Create new Categorie
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="boncmd8App.categorie.referenceCategorie">Reference Categorie</span></th>
+                    <th><span data-translate="boncmd8App.categorie.description">Description</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="categorie in vm.categories track by categorie.id">
+                    <td><a ui-sref="categorie-client-detail({id:categorie.id})">{{categorie.id}}</a></td>
+                    <td>{{categorie.referenceCategorie}}</td>
+                    <td>{{categorie.description}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="categorie-client-detail({id:categorie.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button has-authority="ROLE_ADMIN" type="submit"
+                                    ui-sref="categorie-client.edit({id:categorie.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button has-authority="ROLE_ADMIN" type="submit"
+                                    ui-sref="categorie-client.delete({id:categorie.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

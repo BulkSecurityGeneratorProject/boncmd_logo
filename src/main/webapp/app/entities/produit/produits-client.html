@@ -1,0 +1,62 @@
+<div>
+    <h2 data-translate="boncmd8App.produit.home.title">Produits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="produit-client.new" has-authority="ROLE_ADMIN">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="boncmd8App.produit.home.createLabel">
+                        Create new Produit
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="boncmd8App.produit.referenceProduit">Reference Produit</span></th>
+                    <th><span data-translate="boncmd8App.produit.designation">Designation</span></th>
+                    <th><span data-translate="boncmd8App.produit.categorie">Categorie</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="produit in vm.produits track by produit.id">
+                    <td><a ui-sref="produit-client-detail({id:produit.id})">{{produit.id}}</a></td>
+                    <td>{{produit.referenceProduit}}</td>
+                    <td>{{produit.designation}}</td>
+                    <td>
+                        <a ui-sref="categorie-client-detail({id:produit.categorie.id})">{{produit.categorie.referenceCategorie}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="produit-client-detail({id:produit.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button has-authority="ROLE_ADMIN" type="submit"
+                                    ui-sref="produit-client.edit({id:produit.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button has-authority="ROLE_ADMIN" type="submit"
+                                    ui-sref="produit-client.delete({id:produit.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
