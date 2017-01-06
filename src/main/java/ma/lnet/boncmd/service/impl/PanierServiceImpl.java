@@ -44,7 +44,7 @@ public class PanierServiceImpl implements PanierService{
     @Transactional(readOnly = true) 
     public List<Panier> findAll() {
         log.debug("Request to get all Paniers");
-        List<Panier> result = panierRepository.findByUserIsCurrentUser();
+        List<Panier> result = panierRepository.findAll();
 
         return result;
     }
