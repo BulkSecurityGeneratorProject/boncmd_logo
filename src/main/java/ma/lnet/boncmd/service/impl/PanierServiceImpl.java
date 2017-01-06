@@ -48,6 +48,7 @@ public class PanierServiceImpl implements PanierService{
 
         return result;
     }
+	//
 //    @Transactional(readOnly = true) 
 //    public List<Panier> findAll() {
 //        log.debug("Request to get all Paniers");
