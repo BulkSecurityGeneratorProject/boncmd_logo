@@ -12,6 +12,7 @@ node {
         sh "npm -v"
         sh "bower -v"
         sh "gulp -v"
+        sh "mvn -v"
     }
 
     stage('npm install') {
@@ -19,12 +20,12 @@ node {
     }
 
     stage('clean') {
-        sh "./mvnw clean"
+        sh "mvn clean"
     }
 
     stage('backend tests') {
         try {
-            sh "./mvnw test"
+            sh "mvn test"
         } catch(err) {
             throw err
         } finally {
@@ -43,6 +44,6 @@ node {
     }
 
     stage('packaging') {
-        sh "./mvnw package -Pprod -DskipTests"
+        sh "mvnw package -Pprod -DskipTests"
     }
 }
