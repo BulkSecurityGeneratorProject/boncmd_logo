@@ -44,6 +44,10 @@ node {
     }
 
     stage('packaging') {
-        sh "mvn package -Pprod -DskipTests"
+        sh "mvn package -Pprod -DskipTests docker:build" 
+    }
+        stage('docker-compose') {
+        sh "docker-compose -f **/src/main/docker/app.yml up"
+        
     }
 }
