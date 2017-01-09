@@ -13,6 +13,8 @@ node {
         sh "bower -v"
         sh "gulp -v"
         sh "mvn -v"
+        sh "docker -v"
+        sh "docker-compose -v"
     }
 
     stage('npm install') {
