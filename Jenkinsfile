@@ -51,8 +51,8 @@ node {
     
     stage('docker-compose') {
           
-
-        sh "docker-compose -f src/main/docker/app.yml up"
+sh "docker-compose -f src/main/docker/app.yml stop"
+        sh "docker-compose -f src/main/docker/app.yml up -d"
         
     }
 }
